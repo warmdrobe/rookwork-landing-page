@@ -35,6 +35,9 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Create CNAME file
+        run: echo "${{ vars.CUSTOM_DOMAIN }}" > ./dist/CNAME
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
