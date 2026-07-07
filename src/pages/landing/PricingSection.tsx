@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import ScrollReveal from "./ScrollReveal";
 
 import { FiCheck, FiArrowRight, FiCalendar, FiX } from "react-icons/fi";
 
@@ -88,19 +89,21 @@ export default function PricingSection() {
   return (
     <>
       {/* Metrics Bar */}
-      <section className="max-w-7xl mx-auto px-6 md:px-8 py-8 relative z-10 bg-white">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 rounded-md">
-          <MetricItem value={50} suffix="+" label="Users Active" />
-          <MetricItem value={200} suffix="+" label="Workspaces onboarding" />
-          <MetricItem value={999} suffix="%" label="uptime SLA" />
-          <MetricItem value={40} suffix="%" label="faster delivery" />
-        </div>
+      <section className=" mx-auto py-8 relative z-10 bg-white">
+        <ScrollReveal animation="slide-up" duration={800}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 rounded-md">
+            <MetricItem value={50} suffix="+" label="Users Active" />
+            <MetricItem value={200} suffix="+" label="Workspaces onboarding" />
+            <MetricItem value={999} suffix="%" label="uptime SLA" />
+            <MetricItem value={40} suffix="%" label="faster delivery" />
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* Pricing Plans */}
       <section
         id="pricing"
-        className="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28 relative z-10 "
+        className="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28 relative z-10 scroll-mt-20"
       >
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -142,7 +145,8 @@ export default function PricingSection() {
         {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-3xl mx-auto">
           {/* Starter Card */}
-          <div className="p-8 border-2 border-gray-200  hover:bg-gray-100 rounded-md text-left flex flex-col justify-between transition-all duration-300 bg-white relative overflow-hidden group">
+          <ScrollReveal animation="slide-up" duration={800} delay={0} className="flex h-full">
+            <div className="p-8 border-2 border-gray-200  hover:bg-gray-100 rounded-md text-left flex flex-col justify-between transition-all duration-300 bg-white relative overflow-hidden group h-full w-full">
             {/* Subtle top indicator bar */}
             <div className="absolute top-0 left-0 w-full h-1.5 " />
             
@@ -183,15 +187,17 @@ export default function PricingSection() {
               </ul>
             </div>
             <a
-              href="/register"
+              href="https://www.rookwork.asia/register"
               className="w-full py-4 border-2  rounded-md text-[13px] font-bold text-center bg-gray-100 hover:bg-gray-200 text-gray-800 transition-all"
             >
               Get Started Free
             </a>
-          </div>
+            </div>
+          </ScrollReveal>
 
           {/* Pro Card (Premium Dark Card) */}
-          <div className="p-8 rounded-md text-left flex flex-col justify-between transition-all duration-300 bg-[#121620]/90 text-white relative overflow-hidden group">
+          <ScrollReveal animation="slide-up" duration={800} delay={150} className="flex h-full">
+            <div className="p-8 rounded-md text-left flex flex-col justify-between transition-all duration-300 bg-[#121620]/90 text-white relative overflow-hidden group h-full w-full">
             {/* Custom Ribbon at Corner */}
             <div className="absolute top-0 right-0 w-24 h-24 overflow-hidden pointer-events-none select-none">
               <div className="absolute top-6 -right-6 w-32 bg-[#FF6B4A] text-white text-[9px] font-extrabold uppercase py-1 text-center rotate-45 flex items-center justify-center gap-1">
@@ -242,19 +248,20 @@ export default function PricingSection() {
               </ul>
             </div>
             <a
-              href="/register"
+              href="https://www.rookwork.asia/register"
               className="w-full py-4 rounded-md text-xs font-bold text-center bg-[#FF6B4A] hover:bg-[#ff5733] text-white transition-all border border-transparent"
             >
               Start 14-Day Free Trial
             </a>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Integrations Grid */}
       <section
         id="integrations"
-        className="py-20 transition-colors duration-300 bg-gray-50"
+        className="py-20 transition-colors duration-300 bg-gray-50 scroll-mt-20"
       >
         <div className="max-w-7xl mx-auto px-6 md:px-8 text-center">
           <h2 className="text-7xl font-medium tracking-tight font-heading mb-4">
@@ -266,10 +273,11 @@ export default function PricingSection() {
           </p>
 
           {/* App Icons Grid */}
-          <div className="flex flex-wrap items-center justify-center gap-6 max-w-3xl mx-auto">
+          <ScrollReveal animation="scale-in" duration={800}>
+            <div className="flex flex-wrap items-center justify-center gap-6 max-w-3xl mx-auto">
             {/* Slack */}
             <div
-              className="p-5 rounded-md flex items-center justify-center text-3xl transition-all duration-300 hover:scale-105 bg-white border-2 border-gray-100"
+              className="p-5 rounded-md flex items-center justify-center text-3xl transition-all duration-300 hover:scale-105 "
               title="Slack"
             >
               <FaSlack className="text-[#E01E5A]" />
@@ -277,7 +285,7 @@ export default function PricingSection() {
 
             {/* GitHub */}
             <div
-              className="p-5 rounded-md flex items-center justify-center text-3xl transition-all duration-300 hover:scale-105 bg-white border-2 border-gray-100"
+              className="p-5 rounded-md flex items-center justify-center text-3xl transition-all duration-300 hover:scale-105 "
               title="GitHub"
             >
               <FaGithubBrand className="text-gray-900" />
@@ -285,7 +293,7 @@ export default function PricingSection() {
 
             {/* Figma */}
             <div
-              className="p-5 rounded-md flex items-center justify-center text-3xl transition-all duration-300 hover:scale-105 bg-white border-2 border-gray-100"
+              className="p-5 rounded-md flex items-center justify-center text-3xl transition-all duration-300 hover:scale-105 "
               title="Figma"
             >
               <FaFigma className="text-[#F24E1E]" />
@@ -293,7 +301,7 @@ export default function PricingSection() {
 
             {/* Google Drive */}
             <div
-              className="p-5 rounded-md flex items-center justify-center text-3xl transition-all duration-300 hover:scale-105 bg-white border-2 border-gray-100"
+              className="p-5 rounded-md flex items-center justify-center text-3xl transition-all duration-300 hover:scale-105 "
               title="Google Drive"
             >
               <FaGoogleDrive className="text-[#34A853]" />
@@ -301,7 +309,7 @@ export default function PricingSection() {
 
             {/* Calendar */}
             <div
-              className="p-5 rounded-md flex items-center justify-center text-3xl transition-all duration-300 hover:scale-105 bg-white border-2 border-gray-100"
+              className="p-5 rounded-md flex items-center justify-center text-3xl transition-all duration-300 hover:scale-105 "
               title="Google Calendar"
             >
               <FiCalendar className="text-blue-500" />
@@ -309,18 +317,20 @@ export default function PricingSection() {
 
             {/* Chrome */}
             <div
-              className="p-5 rounded-md flex items-center justify-center text-3xl transition-all duration-300 hover:scale-105 bg-white border-2 border-gray-100"
+              className="p-5 rounded-md flex items-center justify-center text-3xl transition-all duration-300 hover:scale-105 "
               title="Chrome Extension"
             >
               <FaChrome className="text-[#4285F4]" />
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Final CTA / Conversion Section */}
       <section className=" mx-auto items-center bg-purple-900 py-20 relative z-10">
-        <div className="relative rounded-md py-16 text-gray-200 text-center">
+        <ScrollReveal animation="slide-up" duration={800} className="w-full">
+          <div className="relative rounded-md py-16 text-gray-200 text-center">
           <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="text-7xl font-bold font-heading mb-4 tracking-tight leading-tight [text-shadow:0_2px_8px_rgba(0,0,0,0.15)]">
               Ready to get your team organized?
@@ -330,7 +340,7 @@ export default function PricingSection() {
               Rookwork.
             </p>
             <a
-              href="/register"
+              href="https://www.rookwork.asia/register"
               className="inline-flex items-center gap-2  bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold px-8 py-4 rounded-md transition-all active:scale-95 duration-150"
             >
               Get Started Free
@@ -338,6 +348,7 @@ export default function PricingSection() {
             </a>
           </div>
         </div>
+        </ScrollReveal>
       </section>
     </>
   );

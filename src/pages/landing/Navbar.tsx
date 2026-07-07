@@ -54,7 +54,7 @@ export default function Navbar() {
             Pricing
           </a>
           <a
-            href="#footer"
+            href="#about"
             className="text-sm text-gray-300 hover:text-[#FF6B4A] transition-colors duration-200"
           >
             About Us
@@ -75,12 +75,7 @@ export default function Navbar() {
             <HiOutlineDownload size={16} className="inline-block ml-1.5" />
           </a>
 
-          <a
-            href="/login"
-            className="text-sm border-2 py-1.25 px-5 rounded-md text-gray-300 hover:text-white transition-colors duration-200"
-          >
-            Log in
-          </a>
+          
         </div>
 
         {/* Mobile hamburger menu button */}
@@ -103,7 +98,7 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="absolute top-18 text-center left-0 w-full flex flex-col p-6 gap-4 z-40 bg-[#121620] text-white border-t border-gray-800">
           <a
-            href="#features"
+            href="#home"
             onClick={() => setMobileMenuOpen(false)}
             className="text-base py-1 hover:text-purple-400 transition-colors duration-200"
           >
@@ -124,7 +119,7 @@ export default function Navbar() {
             Pricing
           </a>
           <a
-            href="#footer"
+            href="#about"
             onClick={() => setMobileMenuOpen(false)}
             className=" text-base py-1 hover:text-purple-400 transition-colors duration-200"
           >
@@ -141,15 +136,7 @@ export default function Navbar() {
               Download App
               <HiOutlineDownload size={16} className="inline-block ml-4" />
             </button>
-            <div className="flex flex-col gap-3 mt-2">
-              <a
-                href="/login"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-center py-2 rounded-md bg-purple-700 hover:bg-[#252d42] transition-colors"
-              >
-                Sign in
-              </a>
-            </div>
+            
           </div>
         </div>
       )}

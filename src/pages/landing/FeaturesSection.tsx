@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { FiX, FiChevronRight } from "react-icons/fi";
+import ScrollReveal from "./ScrollReveal";
 import { FaTasks, FaBook, FaBug, FaStar } from "react-icons/fa";
-import viewImg from "../../assets/view.png";
-import imageImg from "../../assets/image.png";
-import projectBgImg from "../../assets/project-background.jpg";
 import { TfiHandPointRight } from "react-icons/tfi";
 import { LuUserRoundCheck } from "react-icons/lu";
 import { HiOutlineBellAlert } from "react-icons/hi2";
 import { IoArrowDownOutline } from "react-icons/io5";
-
+import Step1Demo from "../../assets/media/create-issue.mp4";
+import Step2Demo from "../../assets/media/assign-demo.mp4";
+import Step3Demo from "../../assets/media/track-demo.mp4";
 interface TestimonialItem {
   quote: string;
   name: string;
@@ -357,7 +357,7 @@ export default function FeaturesSection() {
       {/* Bento Grid Features Section */}
       <section
         id="features"
-        className="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28 relative z-10"
+        className="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28 relative z-10 scroll-mt-20"
       >
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -371,9 +371,10 @@ export default function FeaturesSection() {
         </div>
 
         {/* Grid System */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[280px]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-70">
           {/* Card 1: Interactive Kanban (md:col-span-8) */}
-          <div className="md:col-span-8 row-span-1 rounded-md p-6 flex flex-col md:flex-row justify-between items-stretch gap-6 overflow-hidden transition-all duration-300 bg-white ">
+          <ScrollReveal animation="slide-up" duration={800} className="md:col-span-8 row-span-1">
+            <div className="rounded-md p-6 flex flex-col md:flex-row justify-between items-stretch gap-6 overflow-hidden transition-all duration-300 bg-white h-full">
             <div className="flex-1 flex flex-col justify-between max-w-xs shrink-0">
               <div>
                 <h3 className="text-xl text-gray-800 font-semibold font-heading mb-2">
@@ -482,9 +483,11 @@ export default function FeaturesSection() {
               })}
             </div>
           </div>
+          </ScrollReveal>
 
           {/* Card 2: Recent Activities (md:col-span-4) */}
-          <div className="md:col-span-4 row-span-1 rounded-md p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 bg-white ">
+          <ScrollReveal animation="slide-up" duration={800} delay={100} className="md:col-span-4 row-span-1">
+            <div className="rounded-md p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 bg-white h-full">
             <div className="flex-1 flex flex-col overflow-hidden h-full">
               <h3 className="text-xl font-semibold text-gray-800 mb-4 select-none">
                 Recent Activity
@@ -514,9 +517,11 @@ export default function FeaturesSection() {
               </div>
             </div>
           </div>
+          </ScrollReveal>
 
           {/* Card 3: Issue Details with Subtasks (md:col-span-4) */}
-          <div className="md:col-span-4 row-span-1 rounded-md p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 bg-white ">
+          <ScrollReveal animation="slide-up" duration={800} delay={200} className="md:col-span-4 row-span-1">
+            <div className="rounded-md p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 bg-white h-full">
             <div className="flex flex-col h-full justify-between">
               {/* Header Info */}
               <div className="flex items-start justify-between border-b pb-2 mb-2 border-gray-100 text-left">
@@ -580,6 +585,8 @@ export default function FeaturesSection() {
                   placeholder="New subtask..."
                   value={newSubtaskTitle}
                   onChange={(e) => setNewSubtaskTitle(e.target.value)}
+                  onInvalid={(e) => (e.target as HTMLInputElement).setCustomValidity("Please fill out this field.")}
+                  onInput={(e) => (e.target as HTMLInputElement).setCustomValidity("")}
                   className="flex-1 px-2 py-1 rounded bg-gray-50 border border-gray-200 text-[10px] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400"
                 />
                 <button
@@ -644,9 +651,11 @@ export default function FeaturesSection() {
               </div>
             </div>
           </div>
+          </ScrollReveal>
 
           {/* Card 4: Timeline (Gantt View - md:col-span-8) */}
-          <div className="md:col-span-8 row-span-1 rounded-md p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 bg-white ">
+          <ScrollReveal animation="slide-up" duration={800} delay={300} className="md:col-span-8 row-span-1">
+            <div className="rounded-md p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 bg-white h-full">
             <div className="flex flex-col h-full justify-between">
               <div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">
@@ -718,13 +727,14 @@ export default function FeaturesSection() {
               </div>
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* How It Works Section */}
       <section
         id="how-it-works"
-        className="py-20 transition-colors duration-300 bg-gray-100"
+        className="py-20 transition-colors duration-300 bg-gray-100 scroll-mt-20"
       >
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -738,109 +748,136 @@ export default function FeaturesSection() {
 
           <div className="space-y-24 md:space-y-12">
             {/* Step 1 */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center min-h-75">
-              {/* Text & Watermark */}
-              <div className="md:col-span-6 space-y-4 relative text-left">
-                {/* Large Watermark */}
-                <div className="absolute -top-14 -left-4 text-9xl font-black text-gray-200/50 select-none -z-10 font-heading tracking-tighter">
-                  01
+            <ScrollReveal animation="slide-up" duration={800} className="w-full">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center min-h-75">
+                {/* Text & Watermark */}
+                <div className="md:col-span-6 space-y-4 relative text-left">
+                  {/* Large Watermark */}
+                  <div className="absolute -top-14 -left-4 text-9xl font-black text-gray-200/50 select-none -z-10 font-heading tracking-tighter">
+                    01
+                  </div>
+                  <div className="relative z-10">
+                    <span className="text-[#500088] font-bold text-xs uppercase tracking-wider mb-2 block font-mono">
+                      Step 01
+                    </span>
+                    <h3 className="text-2xl md:text-3xl font-bold font-heading mb-4 text-gray-900">
+                      Create Issue
+                    </h3>
+                    <p className="text-sm md:text-base leading-relaxed text-gray-650">
+                      Quickly capture ideas and log tasks in a few keystrokes.
+                      Organize your thoughts immediately with tag annotations,
+                      priority levels, and instant list tracking.
+                    </p>
+                  </div>
                 </div>
-                <div className="relative z-10">
-                  <span className="text-[#500088] font-bold text-xs uppercase tracking-wider mb-2 block font-mono">
-                    Step 01
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-bold font-heading mb-4 text-gray-900">
-                    Create Tasks
-                  </h3>
-                  <p className="text-sm md:text-base leading-relaxed text-gray-650">
-                    Quickly capture ideas and log tasks in a few keystrokes.
-                    Organize your thoughts immediately with tag annotations,
-                    priority levels, and instant list tracking.
-                  </p>
-                </div>
-              </div>
 
-              {/* UI Screenshot */}
-              <div className="md:col-span-6 flex justify-center">
-                <div className="rounded-lg overflow-hidden border-2 border-gray-100 bg-white p-2 w-full max-w-md">
-                  <img
-                    src={imageImg}
-                    alt="Create Tasks UI"
-                    className="w-full h-auto max-h-64 object-cover rounded"
-                  />
+                {/* UI Screenshot */}
+                <div className="md:col-span-6 flex justify-center">
+                  <div className="rounded-lg overflow-hidden border-2 border-gray-200 bg-white w-full max-w-md">
+                    {/* Mac-style title bar */}
+                    <div className="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-100">
+                      <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                      <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
+                      <span className="w-3 h-3 rounded-full bg-[#28c840]" />
+                    </div>
+
+                    <div className=" border-t border-gray-200">
+                      <video autoPlay loop muted playsInline>
+                        <source src={Step1Demo} type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Step 2 */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center min-h-[300px]">
-              {/* UI Screenshot - Left on Desktop */}
-              <div className="md:col-span-6 flex justify-center order-2 md:order-1">
-                <div className="rounded-lg overflow-hidden border-2 border-gray-100 bg-white p-2 w-full max-w-md">
-                  <img
-                    src={viewImg}
-                    alt="Assign & Schedule UI"
-                    className="w-full h-auto max-h-64 object-cover rounded"
-                  />
-                </div>
-              </div>
+            <ScrollReveal animation="slide-up" duration={800} className="w-full">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center min-h-75">
+                {/* UI Screenshot - Left on Desktop */}
+                <div className="md:col-span-6 flex justify-center order-2 md:order-1">
+                  <div className="rounded-lg overflow-hidden border-2 border-gray-200 bg-white w-full max-w-md">
+                    {/* Mac-style title bar */}
+                    <div className="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-100">
+                      <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                      <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
+                      <span className="w-3 h-3 rounded-full bg-[#28c840]" />
+                    </div>
 
-              {/* Text & Watermark - Right on Desktop */}
-              <div className="md:col-span-6 space-y-4 relative text-left order-1 md:order-2">
-                {/* Large Watermark */}
-                <div className="absolute -top-14 -left-4 text-9xl font-black text-gray-200/50 select-none -z-10 font-heading tracking-tighter">
-                  02
+                    <div className="border-t border-gray-200">
+                      <video autoPlay loop muted playsInline>
+                        <source src={Step2Demo} type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
                 </div>
-                <div className="relative z-10">
-                  <span className="text-[#FF6B4A] font-bold text-xs uppercase tracking-wider mb-2 block font-mono">
-                    Step 02
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-bold font-heading mb-4 text-gray-900">
-                    Assign & Schedule
-                  </h3>
-                  <p className="text-sm md:text-base leading-relaxed text-gray-650">
-                    Delegate owners, set priorities, and map timelines clearly.
-                    Keep everyone aligned with accurate estimations and active
-                    due dates that keep tasks moving toward completion.
-                  </p>
+
+                {/* Text & Watermark - Right on Desktop */}
+                <div className="md:col-span-6 space-y-4 relative text-left order-1 md:order-2">
+                  {/* Large Watermark */}
+                  <div className="absolute -top-14 -left-4 text-9xl font-black text-gray-200/50 select-none -z-10 font-heading tracking-tighter">
+                    02
+                  </div>
+                  <div className="relative z-10">
+                    <span className="text-[#FF6B4A] font-bold text-xs uppercase tracking-wider mb-2 block font-mono">
+                      Step 02
+                    </span>
+                    <h3 className="text-2xl md:text-3xl font-bold font-heading mb-4 text-gray-900">
+                      Assign & Schedule
+                    </h3>
+                    <p className="text-sm md:text-base leading-relaxed text-gray-650">
+                      Delegate owners, set priorities, and map timelines clearly.
+                      Keep everyone aligned with accurate estimations and active
+                      due dates that keep tasks moving toward completion.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Step 3 */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center min-h-[300px]">
-              {/* Text & Watermark */}
-              <div className="md:col-span-6 space-y-4 relative text-left">
-                {/* Large Watermark */}
-                <div className="absolute -top-14 -left-4 text-9xl font-black text-gray-200/50 select-none -z-10 font-heading tracking-tighter">
-                  03
+            <ScrollReveal animation="slide-up" duration={800} className="w-full">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center min-h-75">
+                {/* Text & Watermark */}
+                <div className="md:col-span-6 space-y-4 relative text-left">
+                  {/* Large Watermark */}
+                  <div className="absolute -top-14 -left-4 text-9xl font-black text-gray-200/50 select-none -z-10 font-heading tracking-tighter">
+                    03
+                  </div>
+                  <div className="relative z-10">
+                    <span className="text-emerald-500 font-bold text-xs uppercase tracking-wider mb-2 block font-mono">
+                      Step 03
+                    </span>
+                    <h3 className="text-2xl md:text-3xl font-bold font-heading mb-4 text-gray-900">
+                      Track & Automate
+                    </h3>
+                    <p className="text-sm md:text-base leading-relaxed text-gray-650">
+                      Watch cards flow, monitor charts, and automate busywork.
+                      Create custom triggers that sync with Slack and GitHub to
+                      eliminate repetitive status checks and manual handoffs.
+                    </p>
+                  </div>
                 </div>
-                <div className="relative z-10">
-                  <span className="text-emerald-500 font-bold text-xs uppercase tracking-wider mb-2 block font-mono">
-                    Step 03
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-bold font-heading mb-4 text-gray-900">
-                    Track & Automate
-                  </h3>
-                  <p className="text-sm md:text-base leading-relaxed text-gray-650">
-                    Watch cards flow, monitor charts, and automate busywork.
-                    Create custom triggers that sync with Slack and GitHub to
-                    eliminate repetitive status checks and manual handoffs.
-                  </p>
-                </div>
-              </div>
 
-              {/* UI Screenshot */}
-              <div className="md:col-span-6 flex justify-center">
-                <div className="rounded-lg overflow-hidden border-2 border-gray-100 bg-white p-2 w-full max-w-md">
-                  <img
-                    src={projectBgImg}
-                    alt="Track & Automate UI"
-                    className="w-full h-auto max-h-64 object-cover rounded"
-                  />
+                {/* UI Screenshot */}
+                <div className="md:col-span-6 flex justify-center">
+                  <div className="rounded-lg overflow-hidden border-2 border-gray-200 bg-white w-full max-w-md">
+                    {/* Mac-style title bar */}
+                    <div className="flex items-center gap-2 px-4 py-3 bg-gray-50">
+                      <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                      <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
+                      <span className="w-3 h-3 rounded-full bg-[#28c840]" />
+                    </div>
+
+                    <div className="border-t border-gray-200">
+                      <video autoPlay loop muted playsInline>
+                        <source src={Step3Demo} type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -848,7 +885,8 @@ export default function FeaturesSection() {
       {/* Product Deep-Dives Section */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28 relative z-10 flex flex-col gap-24 md:gap-32">
         {/* Deep Dive 1: Automations builder */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <ScrollReveal animation="slide-up" duration={800} className="w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Text Left */}
           <div className="lg:col-span-5 text-left order-2 lg:order-1">
             <span className="text-[#500088] font-bold text-xs uppercase tracking-wider mb-3 block font-mono">
@@ -944,10 +982,12 @@ export default function FeaturesSection() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </ScrollReveal>
 
         {/* Deep Dive 2: Chat & context */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <ScrollReveal animation="slide-up" duration={800} className="w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Visual Left */}
           <div className="lg:col-span-7">
             <div className="rounded-md p-6 text-left relative overflow-hidden bg-white ">
@@ -1033,6 +1073,7 @@ export default function FeaturesSection() {
             </a>
           </div>
         </div>
+        </ScrollReveal>
       </section>
 
       {/* Testimonials Section */}
@@ -1050,10 +1091,10 @@ export default function FeaturesSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((item, idx) => (
-              <div
-                key={idx}
-                className="p-8 rounded-md text-left flex flex-col justify-between transition-all duration-300 bg-white border border-gray-200"
-              >
+              <ScrollReveal key={idx} animation="slide-up" duration={800} delay={idx * 150} className="flex h-full">
+                <div
+                  className="p-8 rounded-md text-left flex flex-col justify-between transition-all duration-300 bg-white border border-gray-200 h-full w-full"
+                >
                 <div>
                   <div className="flex gap-1 mb-5">
                     {[...Array(item.rating)].map((_, i) => (
@@ -1083,10 +1124,11 @@ export default function FeaturesSection() {
                     <p className="text-[10px] md:text-xs text-gray-400">
                       {item.role}
                     </p>
-                  </div>
                 </div>
               </div>
-            ))}
+              </div>
+            </ScrollReveal>
+          ))}
           </div>
         </div>
       </section>

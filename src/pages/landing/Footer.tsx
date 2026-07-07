@@ -118,18 +118,18 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Newsletter */}
-          <div className="md:col-span-5 flex flex-col items-start">
+          {/* Column 3: Beta Info & Waitlist */}
+          <div className="md:col-span-5 flex flex-col items-start text-left">
             <h4 className="text-xs font-bold uppercase tracking-wider mb-4 font-heading text-gray-850">
-              Stay updated with Rookwork
+              Rookwork is currently in beta.
             </h4>
             <p className="text-xs mb-4 leading-relaxed text-gray-500">
-              Get productivity tips and product updates.
+              We are gradually onboarding new users to ensure service quality and stability.
             </p>
 
             {subscribed ? (
-              <div className="p-3 bg-emerald-500/10 text-emerald-500 rounded-md text-xs font-bold flex items-center gap-2">
-                <FiCheck /> Thanks for subscribing!
+              <div className="p-3 bg-emerald-500/10 text-emerald-500 rounded-md text-xs font-bold flex items-center gap-2 mb-4 w-full justify-center">
+                <FiCheck /> Thanks! We will contact you soon.
               </div>
             ) : (
               <form
@@ -137,7 +137,7 @@ export default function Footer() {
                   e.preventDefault();
                   if (emailInput.trim()) setSubscribed(true);
                 }}
-                className="flex gap-2 w-full"
+                className="flex gap-2 w-full mb-4"
               >
                 <input
                   type="email"
@@ -145,16 +145,28 @@ export default function Footer() {
                   placeholder="you@example.com"
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
+                  onInvalid={(e) => (e.target as HTMLInputElement).setCustomValidity("Please enter a valid email address.")}
+                  onInput={(e) => (e.target as HTMLInputElement).setCustomValidity("")}
                   className="flex-1 px-3 py-2.5 border-0 text-xs focus:outline-none focus:ring-1 focus:ring-[#500088] transition-all rounded-md bg-gray-100 text-gray-900 placeholder-gray-400"
                 />
                 <button
                   type="submit"
-                  className="bg-[#500088] hover:bg-purple-800 text-white font-bold text-xs px-4 py-2.5 rounded-md transition-all active:scale-95 duration-150"
+                  className="bg-[#500088] hover:bg-purple-800 text-white font-bold text-xs px-4 py-2.5 rounded-md transition-all active:scale-95 duration-150 whitespace-nowrap"
                 >
-                  Subscribe
+                  Request Access
                 </button>
               </form>
             )}
+
+            <p className="text-xs leading-relaxed text-gray-500 font-light">
+              Or contact us at{" "}
+              <a
+                href="mailto:support@rookwork.asia"
+                className="text-[#FF6B4A] hover:text-[#500088] font-semibold underline transition-colors"
+              >
+                support@rookwork.asia
+              </a>
+            </p>
           </div>
         </div>
       </div>

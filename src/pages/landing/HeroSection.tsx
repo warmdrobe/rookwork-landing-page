@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import { FiArrowRight, FiPlay } from "react-icons/fi";
 import { FaTasks, FaBook } from "react-icons/fa";
 import { CiDesktop } from "react-icons/ci";
-import BrowserCoCoc from "../../assets/coccoc_browser.svg?react";
-import BrowserSafari from "../../assets/safari-icon.svg?react";
-import BrowserFirefox from "../../assets/firefox-browser-icon.svg?react";
+import BrowserCoCoc from "../../assets/browser/coccoc_browser.svg?react";
+import BrowserSafari from "../../assets/browser/safari-icon.svg?react";
+import BrowserFirefox from "../../assets/browser/firefox-browser-icon.svg?react";
 export default function HeroSection() {
   // ==========================================
   // HERO KANBAN MOCKUP ANIMATION
@@ -58,6 +58,11 @@ export default function HeroSection() {
   const [cursorPos, setCursorPos] = useState({ x: 82, y: 78 }); // % position
   const [cursorGrabbing, setCursorGrabbing] = useState(false);
   const [animationCardId, setAnimationCardId] = useState<string | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     let phase = 0;
@@ -151,7 +156,7 @@ export default function HeroSection() {
       `}</style>
 
       {/* Hero Dark Container */}
-      <div className="bg-[#121620] pt-28 pb-16 relative overflow-hidden">
+      <div id="home" className="bg-[#121620] pt-28 pb-16 relative overflow-hidden scroll-mt-20">
         {/* Decorative subtle ambient lights */}
         <div className="absolute top-[22%] left-1/2 -translate-x-1/2 w-[40%] aspect-square rounded-full bg-[#500088]/15 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] aspect-square rounded-full bg-[#FF6B4A]/5 blur-[100px] pointer-events-none" />
@@ -159,7 +164,9 @@ export default function HeroSection() {
         {/* Center Content Section */}
         <section className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 flex flex-col items-center text-center">
           {/* Main Centered Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading tracking-tight leading-[1.2] mb-6 text-white [text-shadow:0_0_20px_rgba(255,255,255,0.15)] max-w-4xl">
+          <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold font-heading tracking-tight leading-[1.2] mb-6 text-white [text-shadow:0_0_20px_rgba(255,255,255,0.15)] max-w-4xl transition-all duration-1000 transform ease-out ${
+            isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
             We love to make everything
             <br className="hidden md:block" /> at work{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-400 via-pink-450 to-[#FF6B4A]">
@@ -172,13 +179,17 @@ export default function HeroSection() {
           </h1>
 
           {/* Centered Description */}
-          <p className="text-sm md:text-base mb-8 max-w-2xl text-gray-300 leading-relaxed">
+          <p className={`text-sm md:text-base mb-8 max-w-2xl text-gray-300 leading-relaxed transition-all duration-1000 delay-150 transform ease-out ${
+            isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
             Rookwork brings your tasks, calendar, docs, and chat together in a
             unified, calm workspace. No clutter. No noise. Just focused work.
           </p>
 
           {/* Centered Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-8 text-[10px] font-semibold uppercase tracking-wider text-gray-400">
+          <div className={`flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-8 text-[10px] font-semibold uppercase tracking-wider text-gray-400 transition-all duration-1000 delay-300 transform ease-out ${
+            isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
             <span className="flex items-center gap-1.5">
               <BrowserCoCoc className="w-3.5 h-3.5 text-zinc-700" />
               <BrowserSafari className="w-3.5 h-3.5 text-zinc-700" />
@@ -195,7 +206,9 @@ export default function HeroSection() {
           </div>
 
           {/* Side-by-side CTA buttons */}
-          <div className="flex flex-row items-center justify-center gap-4 w-full max-w-md mb-14">
+          <div className={`flex flex-row items-center justify-center gap-4 w-full max-w-md mb-14 transition-all duration-1000 delay-450 transform ease-out ${
+            isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
             {/* Outline Button: Watch Demo */}
             <a
               href="#features"
@@ -207,7 +220,7 @@ export default function HeroSection() {
 
             {/* Solid Button: Get Started */}
             <a
-              href="/register"
+              href="https://www.rookwork.asia/register"
               className="bg-purple-700 hover:bg-purple-600 text-white font-medium px-6 py-3.5 rounded-md transition-all active:scale-95 flex items-center justify-center gap-2 text-xs flex-1 group"
             >
               Get Started
@@ -216,7 +229,9 @@ export default function HeroSection() {
           </div>
 
           {/* Centered Large Mockup Dashboard */}
-          <div className="w-full max-w-4xl mx-auto rounded-lg overflow-hidden border-2 border-gray-100 bg-white">
+          <div className={`w-full max-w-4xl mx-auto rounded-lg overflow-hidden border-2 border-gray-100 bg-white transition-all duration-1000 delay-600 transform ease-out ${
+            isMounted ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-12 scale-[0.98]"
+          }`}>
             {/* Browser Header Bar */}
             <div className="px-4 py-3 flex items-center justify-between bg-gray-100/90 border-b border-gray-200">
               <div className="flex gap-1.5">
@@ -225,7 +240,7 @@ export default function HeroSection() {
                 <span className="w-2.5 h-2.5 bg-green-400 rounded-full" />
               </div>
               <div className="px-4 py-0.5 rounded text-[10px] font-mono select-none w-1/2 text-center truncate bg-white text-gray-400 border border-gray-150">
-                workspace.rookwork.com/marketing
+                www.rookwork.asia
               </div>
               <div className="w-12" />
             </div>

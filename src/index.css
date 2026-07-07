@@ -6,6 +6,10 @@
   --font-mono: "IBM Plex Mono", monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   @apply font-body;
