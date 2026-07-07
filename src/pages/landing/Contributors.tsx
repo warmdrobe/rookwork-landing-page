@@ -5,6 +5,7 @@ import TranTrongTan from "../../assets/contributors/TranTrongTan.jpg";
 import NguyenVanDat from "../../assets/contributors/NguyenVanDat.jpg";
 import ChauThanhDat from "../../assets/contributors/ChauThanhDat.jpg";
 import NguyenAnKhang from "../../assets/contributors/NguyenAnKhang.jpg";
+import PhamHoangTuanKha from "../../assets/contributors/PhamHoangTuanKha.jpg";
 interface Contributor {
   name: string;
   role: string;
@@ -28,13 +29,21 @@ const contributors: Contributor[] = [
   {
     name: "Tran Trong Tan",
     role: "Project Lead & Software Engineer",
-    bio: "Lead Architect of Rookwork. Passionate about building seamless collaborative experiences and automating workflows.",
+    bio: "a Software Engineer and leader of Rookwork. also a member of Warmdrobe.",
     image: TranTrongTan,
     portfolio: "https://tanas2k4.github.io/Portfolio/",
     github: "https://github.com/TanAs2k4",
     linkedin: "https://www.linkedin.com/in/t%E1%BA%A5n-tr%E1%BA%A7n-78b8b5379/",
   },
-
+  {
+    name: "Pham Hoang Tuan Kha",
+    role: "Software Engineer",
+    bio: "Software engineer at Endava and is a member of Warmdrobe.",
+    image: PhamHoangTuanKha,
+    portfolio: "https://khar34.dev/",
+    github: "https://github.com/khar34",
+    linkedin: "https://www.linkedin.com/in/phamhoangtuankha/",
+  },
   {
     name: "Nguyen An Khang",
     role: "Cloud Engineer",

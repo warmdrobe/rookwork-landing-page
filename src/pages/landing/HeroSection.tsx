@@ -19,16 +19,18 @@ export default function HeroSection() {
         priority: "High",
         type: "task",
         assigneeName: "Leo",
-        assigneeAvt: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=50&h=50&fit=crop&crop=face"
+        assigneeAvt:
+          "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=50&h=50&fit=crop&crop=face",
       },
-      { 
-        id: "k2", 
-        title: "Write API specs", 
-        tag: "Docs", 
+      {
+        id: "k2",
+        title: "Write API specs",
+        tag: "Docs",
         priority: "Medium",
         type: "story",
         assigneeName: "Sarah",
-        assigneeAvt: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=50&h=50&fit=crop&crop=face"
+        assigneeAvt:
+          "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=50&h=50&fit=crop&crop=face",
       },
     ],
     progress: [
@@ -39,18 +41,20 @@ export default function HeroSection() {
         priority: "High",
         type: "task",
         assigneeName: "Jenny",
-        assigneeAvt: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop&crop=face"
+        assigneeAvt:
+          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop&crop=face",
       },
     ],
     done: [
-      { 
-        id: "k4", 
-        title: "Setup PostgreSQL DB", 
-        tag: "Ops", 
+      {
+        id: "k4",
+        title: "Setup PostgreSQL DB",
+        tag: "Ops",
         priority: "Done",
         type: "task",
         assigneeName: "Alex",
-        assigneeAvt: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face"
+        assigneeAvt:
+          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face",
       },
     ],
   });
@@ -80,7 +84,8 @@ export default function HeroSection() {
               priority: "High",
               type: "task",
               assigneeName: "Leo",
-              assigneeAvt: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=50&h=50&fit=crop&crop=face"
+              assigneeAvt:
+                "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=50&h=50&fit=crop&crop=face",
             },
             {
               id: "k2",
@@ -89,7 +94,8 @@ export default function HeroSection() {
               priority: "Medium",
               type: "story",
               assigneeName: "Sarah",
-              assigneeAvt: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=50&h=50&fit=crop&crop=face"
+              assigneeAvt:
+                "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=50&h=50&fit=crop&crop=face",
             },
           ],
           progress: [
@@ -100,7 +106,8 @@ export default function HeroSection() {
               priority: "High",
               type: "task",
               assigneeName: "Jenny",
-              assigneeAvt: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop&crop=face"
+              assigneeAvt:
+                "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop&crop=face",
             },
           ],
           done: [
@@ -111,7 +118,8 @@ export default function HeroSection() {
               priority: "Done",
               type: "task",
               assigneeName: "Alex",
-              assigneeAvt: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face"
+              assigneeAvt:
+                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face",
             },
           ],
         });
@@ -156,7 +164,10 @@ export default function HeroSection() {
       `}</style>
 
       {/* Hero Dark Container */}
-      <div id="home" className="bg-[#121620] pt-28 pb-16 relative overflow-hidden scroll-mt-20">
+      <div
+        id="home"
+        className="bg-[#121620] pt-28 pb-16 relative overflow-hidden scroll-mt-20"
+      >
         {/* Decorative subtle ambient lights */}
         <div className="absolute top-[22%] left-1/2 -translate-x-1/2 w-[40%] aspect-square rounded-full bg-[#500088]/15 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] aspect-square rounded-full bg-[#FF6B4A]/5 blur-[100px] pointer-events-none" />
@@ -164,9 +175,13 @@ export default function HeroSection() {
         {/* Center Content Section */}
         <section className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 flex flex-col items-center text-center">
           {/* Main Centered Heading */}
-          <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold font-heading tracking-tight leading-[1.2] mb-6 text-white [text-shadow:0_0_20px_rgba(255,255,255,0.15)] max-w-4xl transition-all duration-1000 transform ease-out ${
-            isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}>
+          <h1
+            className={`text-4xl md:text-5xl lg:text-6xl font-bold font-heading tracking-tight leading-[1.2] mb-6 text-white [text-shadow:0_0_20px_rgba(255,255,255,0.15)] max-w-4xl transition-all duration-1000 transform ease-out ${
+              isMounted
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
+          >
             We love to make everything
             <br className="hidden md:block" /> at work{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-400 via-pink-450 to-[#FF6B4A]">
@@ -179,36 +194,62 @@ export default function HeroSection() {
           </h1>
 
           {/* Centered Description */}
-          <p className={`text-sm md:text-base mb-8 max-w-2xl text-gray-300 leading-relaxed transition-all duration-1000 delay-150 transform ease-out ${
-            isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}>
+          <p
+            className={`text-sm md:text-base mb-2 max-w-2xl text-gray-300 leading-relaxed transition-all duration-1000 delay-150 transform ease-out ${
+              isMounted
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
+          >
             Rookwork brings your tasks, calendar, docs, and chat together in a
             unified, calm workspace. No clutter. No noise. Just focused work.
           </p>
+          <p
+            className={`text-sm text-gray-500 italic mb-6 transition-all duration-1000 delay-200 transform ease-out ${
+              isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            We are gradually onboarding new users to ensure service quality and
+            stability. Contact us at{" "}
+            <a
+              href="mailto:support@rookwork.asia"
+              className="text-[#FF6B4A] hover:text-purple-400 font-semibold underline transition-colors"
+            >
+              support@rookwork.asia
+            </a>
+          </p>
 
           {/* Centered Badges */}
-          <div className={`flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-8 text-[10px] font-semibold uppercase tracking-wider text-gray-400 transition-all duration-1000 delay-300 transform ease-out ${
-            isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}>
+          <div
+            className={`flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-8 text-[10px] font-semibold uppercase tracking-wider text-gray-400 transition-all duration-1000 delay-300 transform ease-out ${
+              isMounted
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
+          >
             <span className="flex items-center gap-1.5">
               <BrowserCoCoc className="w-3.5 h-3.5 text-zinc-700" />
               <BrowserSafari className="w-3.5 h-3.5 text-zinc-700" />
               <BrowserFirefox className="w-3.5 h-3.5 text-zinc-700" />
               Web Browser
             </span>
-            <button 
+            <button
               onClick={() => alert("Coming soon!")}
               className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"
             >
               <CiDesktop className="w-3.5 h-3.5 text-gray-200" />
-               Desktop App
+              Desktop App
             </button>
           </div>
 
           {/* Side-by-side CTA buttons */}
-          <div className={`flex flex-row items-center justify-center gap-4 w-full max-w-md mb-14 transition-all duration-1000 delay-450 transform ease-out ${
-            isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}>
+          <div
+            className={`flex flex-row items-center justify-center gap-4 w-full max-w-md mb-14 transition-all duration-1000 delay-450 transform ease-out ${
+              isMounted
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
+          >
             {/* Outline Button: Watch Demo */}
             <a
               href="#features"
@@ -229,9 +270,13 @@ export default function HeroSection() {
           </div>
 
           {/* Centered Large Mockup Dashboard */}
-          <div className={`w-full max-w-4xl mx-auto rounded-lg overflow-hidden border-2 border-gray-100 bg-white transition-all duration-1000 delay-600 transform ease-out ${
-            isMounted ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-12 scale-[0.98]"
-          }`}>
+          <div
+            className={`w-full max-w-4xl mx-auto rounded-lg overflow-hidden border-2 border-gray-100 bg-white transition-all duration-1000 delay-600 transform ease-out ${
+              isMounted
+                ? "opacity-100 translate-y-0 scale-100"
+                : "opacity-0 translate-y-12 scale-[0.98]"
+            }`}
+          >
             {/* Browser Header Bar */}
             <div className="px-4 py-3 flex items-center justify-between bg-gray-100/90 border-b border-gray-200">
               <div className="flex gap-1.5">
@@ -279,9 +324,15 @@ export default function HeroSection() {
                       {/* Icon and Title */}
                       <div className="flex items-start gap-2">
                         {card.type === "story" ? (
-                          <FaBook size={10} className="text-blue-500 mt-0.5 shrink-0" />
+                          <FaBook
+                            size={10}
+                            className="text-blue-500 mt-0.5 shrink-0"
+                          />
                         ) : (
-                          <FaTasks size={10} className="text-[#500088] mt-0.5 shrink-0" />
+                          <FaTasks
+                            size={10}
+                            className="text-[#500088] mt-0.5 shrink-0"
+                          />
                         )}
                         <span className="text-[12px] font-semibold flex-1 leading-tight truncate text-gray-800">
                           {card.title}
@@ -291,10 +342,10 @@ export default function HeroSection() {
                       {/* Meta info (Assignee name and avatar + date) */}
                       <div className="flex items-center justify-between mt-1">
                         <div className="flex items-center gap-1.5">
-                          <img 
-                            src={card.assigneeAvt} 
-                            alt={card.assigneeName} 
-                            className="w-5 h-5 rounded-full object-cover border border-gray-100 shrink-0" 
+                          <img
+                            src={card.assigneeAvt}
+                            alt={card.assigneeName}
+                            className="w-5 h-5 rounded-full object-cover border border-gray-100 shrink-0"
                           />
                           <span className="text-[10px] text-gray-500 font-medium">
                             {card.assigneeName}
@@ -308,17 +359,27 @@ export default function HeroSection() {
                       {/* Priority dash bar at bottom */}
                       <div className="flex gap-0.5 h-1 mt-1.5 select-none">
                         {["low", "medium", "high", "urgent"].map((p, i) => {
-                          const prioritiesArray = ["low", "medium", "high", "urgent"];
+                          const prioritiesArray = [
+                            "low",
+                            "medium",
+                            "high",
+                            "urgent",
+                          ];
                           const cardPriority = card.priority.toLowerCase();
-                          const active = cardPriority === "done" 
-                            ? i <= prioritiesArray.indexOf("low")
-                            : i <= prioritiesArray.indexOf(cardPriority);
-                          const colorClass = cardPriority === "done" 
-                            ? "bg-green-500" 
-                            : p === "low" ? "bg-green-500"
-                            : p === "medium" ? "bg-yellow-500"
-                            : p === "high" ? "bg-orange-500"
-                            : "bg-purple-500";
+                          const active =
+                            cardPriority === "done"
+                              ? i <= prioritiesArray.indexOf("low")
+                              : i <= prioritiesArray.indexOf(cardPriority);
+                          const colorClass =
+                            cardPriority === "done"
+                              ? "bg-green-500"
+                              : p === "low"
+                                ? "bg-green-500"
+                                : p === "medium"
+                                  ? "bg-yellow-500"
+                                  : p === "high"
+                                    ? "bg-orange-500"
+                                    : "bg-purple-500";
                           return (
                             <div
                               key={p}
@@ -360,9 +421,15 @@ export default function HeroSection() {
                       {/* Icon and Title */}
                       <div className="flex items-start gap-2">
                         {card.type === "story" ? (
-                          <FaBook size={10} className="text-blue-500 mt-0.5 shrink-0" />
+                          <FaBook
+                            size={10}
+                            className="text-blue-500 mt-0.5 shrink-0"
+                          />
                         ) : (
-                          <FaTasks size={10} className="text-[#500088] mt-0.5 shrink-0" />
+                          <FaTasks
+                            size={10}
+                            className="text-[#500088] mt-0.5 shrink-0"
+                          />
                         )}
                         <span className="text-[12px] font-semibold flex-1 leading-tight truncate text-gray-800">
                           {card.title}
@@ -372,10 +439,10 @@ export default function HeroSection() {
                       {/* Meta info (Assignee name and avatar + date) */}
                       <div className="flex items-center justify-between mt-1">
                         <div className="flex items-center gap-1.5">
-                          <img 
-                            src={card.assigneeAvt} 
-                            alt={card.assigneeName} 
-                            className="w-5 h-5 rounded-full object-cover border border-gray-100 shrink-0" 
+                          <img
+                            src={card.assigneeAvt}
+                            alt={card.assigneeName}
+                            className="w-5 h-5 rounded-full object-cover border border-gray-100 shrink-0"
                           />
                           <span className="text-[10px] text-gray-500 font-medium">
                             {card.assigneeName}
@@ -389,17 +456,27 @@ export default function HeroSection() {
                       {/* Priority dash bar at bottom */}
                       <div className="flex gap-0.5 h-1 mt-1.5 select-none">
                         {["low", "medium", "high", "urgent"].map((p, i) => {
-                          const prioritiesArray = ["low", "medium", "high", "urgent"];
+                          const prioritiesArray = [
+                            "low",
+                            "medium",
+                            "high",
+                            "urgent",
+                          ];
                           const cardPriority = card.priority.toLowerCase();
-                          const active = cardPriority === "done" 
-                            ? i <= prioritiesArray.indexOf("low")
-                            : i <= prioritiesArray.indexOf(cardPriority);
-                          const colorClass = cardPriority === "done" 
-                            ? "bg-green-500" 
-                            : p === "low" ? "bg-green-500"
-                            : p === "medium" ? "bg-yellow-500"
-                            : p === "high" ? "bg-orange-500"
-                            : "bg-purple-500";
+                          const active =
+                            cardPriority === "done"
+                              ? i <= prioritiesArray.indexOf("low")
+                              : i <= prioritiesArray.indexOf(cardPriority);
+                          const colorClass =
+                            cardPriority === "done"
+                              ? "bg-green-500"
+                              : p === "low"
+                                ? "bg-green-500"
+                                : p === "medium"
+                                  ? "bg-yellow-500"
+                                  : p === "high"
+                                    ? "bg-orange-500"
+                                    : "bg-purple-500";
                           return (
                             <div
                               key={p}
@@ -441,9 +518,15 @@ export default function HeroSection() {
                       {/* Icon and Title */}
                       <div className="flex items-start gap-2">
                         {card.type === "story" ? (
-                          <FaBook size={10} className="text-blue-500 mt-0.5 shrink-0 opacity-65" />
+                          <FaBook
+                            size={10}
+                            className="text-blue-500 mt-0.5 shrink-0 opacity-65"
+                          />
                         ) : (
-                          <FaTasks size={10} className="text-[#500088] mt-0.5 shrink-0 opacity-65" />
+                          <FaTasks
+                            size={10}
+                            className="text-[#500088] mt-0.5 shrink-0 opacity-65"
+                          />
                         )}
                         <span className="text-[12px] font-semibold flex-1 leading-tight truncate line-through text-gray-500">
                           {card.title}
@@ -453,10 +536,10 @@ export default function HeroSection() {
                       {/* Meta info (Assignee name and avatar + date) */}
                       <div className="flex items-center justify-between mt-1">
                         <div className="flex items-center gap-1.5">
-                          <img 
-                            src={card.assigneeAvt} 
-                            alt={card.assigneeName} 
-                            className="w-5 h-5 rounded-full object-cover border border-gray-100 shrink-0 opacity-65" 
+                          <img
+                            src={card.assigneeAvt}
+                            alt={card.assigneeName}
+                            className="w-5 h-5 rounded-full object-cover border border-gray-100 shrink-0 opacity-65"
                           />
                           <span className="text-[10px] text-gray-450 font-medium">
                             {card.assigneeName}
@@ -470,17 +553,27 @@ export default function HeroSection() {
                       {/* Priority dash bar at bottom */}
                       <div className="flex gap-0.5 h-1 mt-1.5 select-none">
                         {["low", "medium", "high", "urgent"].map((p, i) => {
-                          const prioritiesArray = ["low", "medium", "high", "urgent"];
+                          const prioritiesArray = [
+                            "low",
+                            "medium",
+                            "high",
+                            "urgent",
+                          ];
                           const cardPriority = card.priority.toLowerCase();
-                          const active = cardPriority === "done" 
-                            ? i <= prioritiesArray.indexOf("low")
-                            : i <= prioritiesArray.indexOf(cardPriority);
-                          const colorClass = cardPriority === "done" 
-                            ? "bg-green-500" 
-                            : p === "low" ? "bg-green-500"
-                            : p === "medium" ? "bg-yellow-500"
-                            : p === "high" ? "bg-orange-500"
-                            : "bg-purple-500";
+                          const active =
+                            cardPriority === "done"
+                              ? i <= prioritiesArray.indexOf("low")
+                              : i <= prioritiesArray.indexOf(cardPriority);
+                          const colorClass =
+                            cardPriority === "done"
+                              ? "bg-green-500"
+                              : p === "low"
+                                ? "bg-green-500"
+                                : p === "medium"
+                                  ? "bg-yellow-500"
+                                  : p === "high"
+                                    ? "bg-orange-500"
+                                    : "bg-purple-500";
                           return (
                             <div
                               key={p}
@@ -506,7 +599,10 @@ export default function HeroSection() {
                 >
                   {/* Icon and Title */}
                   <div className="flex items-start gap-2">
-                    <FaBook size={10} className="text-blue-500 mt-0.5 shrink-0" />
+                    <FaBook
+                      size={10}
+                      className="text-blue-500 mt-0.5 shrink-0"
+                    />
                     <span className="text-[12px] font-semibold flex-1 leading-tight truncate text-gray-800">
                       Write API specs
                     </span>
@@ -515,10 +611,10 @@ export default function HeroSection() {
                   {/* Meta info (Assignee name and avatar + date) */}
                   <div className="flex items-center justify-between mt-1">
                     <div className="flex items-center gap-1.5">
-                      <img 
-                        src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=50&h=50&fit=crop&crop=face" 
-                        alt="Sarah" 
-                        className="w-5 h-5 rounded-full object-cover border border-gray-100 shrink-0" 
+                      <img
+                        src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=50&h=50&fit=crop&crop=face"
+                        alt="Sarah"
+                        className="w-5 h-5 rounded-full object-cover border border-gray-100 shrink-0"
                       />
                       <span className="text-[10px] text-gray-500 font-medium">
                         Sarah
@@ -532,13 +628,22 @@ export default function HeroSection() {
                   {/* Priority dash bar at bottom */}
                   <div className="flex gap-0.5 h-1 mt-1.5 select-none">
                     {["low", "medium", "high", "urgent"].map((p, i) => {
-                      const prioritiesArray = ["low", "medium", "high", "urgent"];
+                      const prioritiesArray = [
+                        "low",
+                        "medium",
+                        "high",
+                        "urgent",
+                      ];
                       const cardPriority = "medium";
                       const active = i <= prioritiesArray.indexOf(cardPriority);
-                      const colorClass = p === "low" ? "bg-green-500"
-                        : p === "medium" ? "bg-yellow-500"
-                        : p === "high" ? "bg-orange-500"
-                        : "bg-purple-500";
+                      const colorClass =
+                        p === "low"
+                          ? "bg-green-500"
+                          : p === "medium"
+                            ? "bg-yellow-500"
+                            : p === "high"
+                              ? "bg-orange-500"
+                              : "bg-purple-500";
                       return (
                         <div
                           key={p}

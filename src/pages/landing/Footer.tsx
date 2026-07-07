@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FiTwitter, FiGithub, FiLinkedin, FiCheck } from "react-icons/fi";
+import { FiGithub, FiCheck } from "react-icons/fi";
 import WarmdrobeLogo from "../../assets/warmdrobe-no-background.png";
 
 export default function Footer() {
@@ -28,36 +28,20 @@ export default function Footer() {
               focus on building.
             </p>
 
-            <div className="flex flex-col">
+            <div className="flex flex-row gap-5">
               {/* Social icons */}
-              <div className="flex gap-4 items-center">
+              <div className="flex items-center">
                 <a
-                  href="https://twitter.com"
+                  href="https://github.com/warmdrobe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#500088] transition-colors text-gray-550"
+                  className=" transition-colors text-gray-555"
                 >
-                  <FiTwitter className="w-4.5 h-4.5" />
-                </a>
-                 <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#500088] transition-colors text-gray-555"
-                >
-                  <FiGithub className="w-4.5 h-4.5" />
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#500088] transition-colors text-gray-555"
-                >
-                  <FiLinkedin className="w-4.5 h-4.5" />
+                  <FiGithub className="w-4.5 h-4.5 text-gray-500 hover:text-black" />
                 </a>
               </div>
               {/* Bottom Copyright */}
-              <div className="pt-2">
+              <div>
                 <span className="text-[10px] md:text-xs text-gray-400">
                   © 2026 Rookwork Inc. All rights reserved.
                 </span>
@@ -80,7 +64,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                 <a
+                <a
                   href="#features"
                   className="hover:text-[#500088] transition-colors"
                 >
@@ -88,7 +72,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                 <a
+                <a
                   href="#features"
                   className="hover:text-[#500088] transition-colors"
                 >
@@ -96,7 +80,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                 <a
+                <a
                   href="#pricing"
                   className="hover:text-[#500088] transition-colors"
                 >
@@ -104,7 +88,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                 <a
+                <a
                   href="#download"
                   onClick={(e) => {
                     e.preventDefault();
@@ -124,7 +108,8 @@ export default function Footer() {
               Rookwork is currently in beta.
             </h4>
             <p className="text-xs mb-4 leading-relaxed text-gray-500">
-              We are gradually onboarding new users to ensure service quality and stability.
+              We are gradually onboarding new users to ensure service quality
+              and stability.
             </p>
 
             {subscribed ? (
@@ -145,8 +130,14 @@ export default function Footer() {
                   placeholder="you@example.com"
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
-                  onInvalid={(e) => (e.target as HTMLInputElement).setCustomValidity("Please enter a valid email address.")}
-                  onInput={(e) => (e.target as HTMLInputElement).setCustomValidity("")}
+                  onInvalid={(e) =>
+                    (e.target as HTMLInputElement).setCustomValidity(
+                      "Please enter a valid email address.",
+                    )
+                  }
+                  onInput={(e) =>
+                    (e.target as HTMLInputElement).setCustomValidity("")
+                  }
                   className="flex-1 px-3 py-2.5 border-0 text-xs focus:outline-none focus:ring-1 focus:ring-[#500088] transition-all rounded-md bg-gray-100 text-gray-900 placeholder-gray-400"
                 />
                 <button
