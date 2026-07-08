@@ -212,7 +212,9 @@ export default function HeroSection() {
             We are gradually onboarding new users to ensure service quality and
             stability. Contact us at{" "}
             <a
-              href="mailto:support@rookwork.asia"
+              href="https://mail.google.com/mail/?view=cm&to=support@rookwork.asia"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[#FF6B4A] hover:text-purple-400 font-semibold underline transition-colors"
             >
               support@rookwork.asia

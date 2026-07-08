@@ -5,6 +5,8 @@ import WarmdrobeLogo from "../../assets/warmdrobe-no-background.png";
 export default function Footer() {
   const [emailInput, setEmailInput] = useState<string>("");
   const [subscribed, setSubscribed] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
 
   return (
     <footer
@@ -118,41 +120,72 @@ export default function Footer() {
               </div>
             ) : (
               <form
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
-                  if (emailInput.trim()) setSubscribed(true);
+                  if (!emailInput.trim()) return;
+                  setLoading(true);
+                  setError("");
+                  try {
+                    const res = await fetch("https://formspree.io/f/mwvdjrvd", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json", Accept: "application/json" },
+                      body: JSON.stringify({
+                        email: emailInput,
+                        _replyto: emailInput,
+                        _subject: `[Rookwork] New Access Request from ${emailInput}`,
+                        message: `A new user has requested early access to Rookwork.\n\nEmail: ${emailInput}\n\nYou can reply directly to this email to follow up.`,
+                      }),
+                    });
+                    if (res.ok) {
+                      setSubscribed(true);
+                    } else {
+                      setError("Something went wrong. Please try again.");
+                    }
+                  } catch {
+                    setError("Network error. Please try again.");
+                  } finally {
+                    setLoading(false);
+                  }
                 }}
-                className="flex gap-2 w-full mb-4"
+                className="flex flex-col gap-2 w-full mb-4"
               >
-                <input
-                  type="email"
-                  required
-                  placeholder="you@example.com"
-                  value={emailInput}
-                  onChange={(e) => setEmailInput(e.target.value)}
-                  onInvalid={(e) =>
-                    (e.target as HTMLInputElement).setCustomValidity(
-                      "Please enter a valid email address.",
-                    )
-                  }
-                  onInput={(e) =>
-                    (e.target as HTMLInputElement).setCustomValidity("")
-                  }
-                  className="flex-1 px-3 py-2.5 border-0 text-xs focus:outline-none focus:ring-1 focus:ring-[#500088] transition-all rounded-md bg-gray-100 text-gray-900 placeholder-gray-400"
-                />
-                <button
-                  type="submit"
-                  className="bg-[#500088] hover:bg-purple-800 text-white font-bold text-xs px-4 py-2.5 rounded-md transition-all active:scale-95 duration-150 whitespace-nowrap"
-                >
-                  Request Access
-                </button>
+                <div className="flex gap-2 w-full">
+                  <input
+                    type="email"
+                    required
+                    placeholder="you@example.com"
+                    value={emailInput}
+                    onChange={(e) => setEmailInput(e.target.value)}
+                    onInvalid={(e) =>
+                      (e.target as HTMLInputElement).setCustomValidity(
+                        "Please enter a valid email address.",
+                      )
+                    }
+                    onInput={(e) =>
+                      (e.target as HTMLInputElement).setCustomValidity("")
+                    }
+                    className="flex-1 px-3 py-2.5 border-0 text-xs focus:outline-none focus:ring-1 focus:ring-[#500088] transition-all rounded-md bg-gray-100 text-gray-900 placeholder-gray-400"
+                  />
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="bg-[#500088] hover:bg-purple-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-xs px-4 py-2.5 rounded-md transition-all active:scale-95 duration-150 whitespace-nowrap"
+                  >
+                    {loading ? "Sending..." : "Request Access"}
+                  </button>
+                </div>
+                {error && (
+                  <p className="text-xs text-red-500">{error}</p>
+                )}
               </form>
             )}
 
             <p className="text-xs leading-relaxed text-gray-500 font-light">
               Or contact us at{" "}
               <a
-                href="mailto:support@rookwork.asia"
+                href="https://mail.google.com/mail/?view=cm&to=support@rookwork.asia"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#FF6B4A] hover:text-[#500088] font-semibold underline transition-colors"
               >
                 support@rookwork.asia
