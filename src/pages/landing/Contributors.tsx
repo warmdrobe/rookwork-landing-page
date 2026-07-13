@@ -5,7 +5,7 @@ import TranTrongTan from "../../assets/contributors/TranTrongTan.jpg";
 import NguyenVanDat from "../../assets/contributors/NguyenVanDat.jpg";
 import ChauThanhDat from "../../assets/contributors/ChauThanhDat.jpg";
 import NguyenAnKhang from "../../assets/contributors/NguyenAnKhang.jpg";
-import PhamHoangTuanKha from "../../assets/contributors/PhamHoangTuanKha.jpg";
+// import PhamHoangTuanKha from "../../assets/contributors/PhamHoangTuanKha.jpg";
 interface Contributor {
   name: string;
   role: string;
